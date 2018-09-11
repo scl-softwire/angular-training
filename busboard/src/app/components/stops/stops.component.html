@@ -1,0 +1,7 @@
+<h2>List of stops</h2>
+<ul>
+  <li *ngFor="let stop of stops" (click)="onSelected(stop)" class="stop">
+    {{stop.name}}
+  </li>
+</ul>
+<app-stop-detail *ngIf="selectedStop" [stop]="selectedStop"></app-stop-detail>
