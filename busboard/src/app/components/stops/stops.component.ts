@@ -13,11 +13,12 @@ import { StopsService } from '../../services/stops.service';
 })
 export class StopsComponent implements OnInit, OnDestroy {
 
-  postcode: string = 'se20ul';
+  postcode: string = 'se2 0ul';
   radius: number = 1000;
   maxStops: number = 5;
 
   stops: Stop[];
+  showError: boolean = false;
   private stopsSubscription: Subscription = new Subscription();
 
   @ViewChild('form') form;
@@ -38,8 +39,12 @@ export class StopsComponent implements OnInit, OnDestroy {
   }
 
   refreshStops() {
-    this.stops = [];
+    this.stops = undefined;
+    this.showError = false;
     this.stopsSubscription.unsubscribe();
-    this.stopsSubscription = this.stopsService.getStops(this.postcode, this.radius, this.maxStops).subscribe(stops => this.stops = stops);
+    this.stopsSubscription = this.stopsService.getStops(this.postcode, this.radius, this.maxStops).subscribe(
+      stops => this.stops = stops,
+      err => this.showError = true
+    );
   }
 }

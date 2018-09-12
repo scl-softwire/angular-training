@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { StopsComponent } from './components/stops/stops.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StopDetailComponent } from './components/stop-detail/stop-detail.component';
+import { PostcodePipe } from './pipes/postcode.pipe';
+import { StopListItemComponent } from './components/stop-list-item/stop-list-item.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StopsComponent,
-    StopDetailComponent
+    StopDetailComponent,
+    PostcodePipe,
+    StopListItemComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

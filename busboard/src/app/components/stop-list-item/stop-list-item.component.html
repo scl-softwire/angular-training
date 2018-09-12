@@ -1,0 +1,5 @@
+<a routerLink="/stop/{{stop.id}}" class="link-container">
+  <img src="assets/buses-roundel.svg" class="bus-logo">
+  <span class="stop-name">{{stop.name}}</span>
+  <span *ngIf="stop.towards" class="towards"> towards {{stop.towards}}</span>
+</a>

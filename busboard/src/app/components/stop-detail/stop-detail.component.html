@@ -1,5 +1,15 @@
 <h2 *ngIf="stopName; else noStopName">Arrivals for {{stopName}}</h2>
 <ng-template #noStopName><h2>Arrivals</h2></ng-template>
-<ol>
-  <li *ngFor="let arrival of arrivals"><b>{{arrival.lineNumber}}</b> towards <b>{{arrival.destination}}</b> in <b>{{arrival.arrivalInMinutes}}</b> minutes</li>
+<ol *ngIf="arrivals; else loadingResults">
+  <li *ngFor="let arrival of arrivals">
+      <div class="arrival-container">
+        <img src="assets/buses-roundel.svg" class="bus-logo">
+        <div class="details">
+          <span class="line-number">{{arrival.lineNumber}}</span>
+          <span class="destination">{{arrival.destination}}</span>
+          <span class="arrival-time">{{arrival.arrivalInMinutes}} minutes</span>
+        </div>
+      </div>
+  </li>
 </ol>
+<ng-template #loadingResults><app-loading-spinner></app-loading-spinner></ng-template>

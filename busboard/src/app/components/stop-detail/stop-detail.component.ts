@@ -22,6 +22,6 @@ export class StopDetailComponent implements OnInit {
   ngOnInit() {
     const stopId = this.route.snapshot.paramMap.get('id');
     this.stopsService.getStopName(stopId).subscribe(name => this.stopName = name);
-    this.arrivalsService.getArrivals(stopId).subscribe(arrivals => {console.log(arrivals); this.arrivals = arrivals});
+    this.arrivalsService.getArrivals(stopId).subscribe(arrivals => this.arrivals = arrivals);
   }
 }

@@ -3,11 +3,20 @@
   <span><b>Radius (metres): </b></span><input type="number" [(ngModel)]="radius" name="radius">
   <span><b>Max stops: </b></span><input type="number" [(ngModel)]="maxStops" name="maxStops">
 </form>
-<h2>List of stops near {{postcode}}</h2>
-<ul>
-  <li *ngFor="let stop of stops">
-    <a routerLink="/stop/{{stop.id}}">
-      <span>{{stop.name}}</span><span *ngIf="stop.towards"> towards {{stop.towards}}</span>
-      </a>
-  </li>
-</ul>
+<div class="results" *ngIf="stops !== undefined && !showError; else loadingResults">
+  <h2>Stops near {{postcode | postcode}}:</h2>
+  <ul *ngIf="stops.length; else noResults">
+    <li *ngFor="let stop of stops">
+      <app-stop-list-item [stop]="stop"></app-stop-list-item>
+    </li>
+  </ul>
+  <ng-template #noResults>
+    <div class="no-results">Whoops! We couldn't find any buses near that postcode. Try increasing the search radius.</div>
+  </ng-template>
+</div>
+<ng-template #loadingResults>
+  <app-loading-spinner></app-loading-spinner>
+</ng-template>
+<div *ngIf="showError" class="error-message">
+  Oh no! Something went wrong. Please check that the postcode you entered is correct.
+</div>

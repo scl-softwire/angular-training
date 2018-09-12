@@ -1,0 +1,25 @@
+.link-container {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #000;
+
+    width: 100%;
+    background-color: #f1ffc4;
+    border-radius: 16px;
+    padding: 32px 16px;
+
+    &:hover {
+        background-color: darken(#f1ffc4, 10%);
+    }
+
+    .stop-name {
+        margin-left: 8px;
+        font-weight: bold;
+    }
+
+    .towards {
+        margin-left: 4px;
+    }
+}
