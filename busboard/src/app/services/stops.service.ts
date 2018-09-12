@@ -11,4 +11,8 @@ export class StopsService {
   getStops(): Stop[] {
     return STOPS;
   }
+
+  getStop(id: string): Stop {
+    return STOPS.find(stop => stop.id === id);
+  }
 }

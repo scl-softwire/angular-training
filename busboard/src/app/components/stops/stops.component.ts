@@ -11,16 +11,11 @@ import { StopsService } from '../../services/stops.service';
 export class StopsComponent implements OnInit {
 
   stops: Stop[];
-  selectedStop: Stop;
 
   constructor(private stopsService: StopsService) {
   }
 
   ngOnInit() {
     this.stops = this.stopsService.getStops();
-  }
-
-  onSelected(stop: Stop): void {
-    this.selectedStop = stop;
   }
 }

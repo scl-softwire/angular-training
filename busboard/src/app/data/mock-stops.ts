@@ -2,6 +2,7 @@ import { Stop } from '../models/stop';
 
 export const STOPS: Stop[] = [
     {
+        id: '1',
         name: 'Eynsham Drive / Blithdale Road',
         arrivals: [
             {
@@ -32,6 +33,7 @@ export const STOPS: Stop[] = [
         ]
     },
     {
+        id: '2',
         name: 'Cassilda Road',
         arrivals: [
             {
@@ -57,6 +59,7 @@ export const STOPS: Stop[] = [
         ]
     },
     {
+        id: '3',
         name: 'Bostall Gardens',
         arrivals: [
             {
