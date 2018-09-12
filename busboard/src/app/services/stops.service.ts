@@ -16,7 +16,11 @@ export class StopsService {
 
   getStops(postcode: string, radius: number, maxStops: number): Observable<Stop[]> {
     const latLon$ = this.postcodesApi.getLatLon(postcode);
-    const stops$ = latLon$.pipe(mergeMap(latLon => this.tflApi.getStopsWithinRadius(latLon, radius)));
-    return stops$.pipe(map(stops => stops.slice(0, maxStops)));
+    const allStops$ = latLon$.pipe(mergeMap(latLon => this.tflApi.getStopsWithinRadius(latLon, radius)));
+    return allStops$.pipe(map(stops => stops.slice(0, maxStops)));
+  }
+
+  getStopName(naptanId: string): Observable<string> {
+    return this.tflApi.getStopName(naptanId);
   }
 }

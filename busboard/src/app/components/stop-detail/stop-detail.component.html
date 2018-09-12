@@ -1,0 +1,5 @@
+<h2 *ngIf="stopName; else noStopName">Arrivals for {{stopName}}</h2>
+<ng-template #noStopName><h2>Arrivals</h2></ng-template>
+<ol>
+  <li *ngFor="let arrival of arrivals"><b>{{arrival.lineNumber}}</b> towards <b>{{arrival.destination}}</b> in <b>{{arrival.arrivalInMinutes}}</b> minutes</li>
+</ol>

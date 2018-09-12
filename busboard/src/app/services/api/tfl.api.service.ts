@@ -4,9 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { LatLon } from '../../models/lat-lon';
 import { BaseApiService } from './base-api.service';
+import { LatLon } from '../../models/lat-lon';
 import { Stop } from '../../models/stop';
+import { Arrival } from '../../models/arrival';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,20 @@ export class TflApiService extends BaseApiService {
     });
     return response$.pipe(map(res => res.stopPoints.map(apiStop => this.mapApiResponseToStop(apiStop))));
   }
+
+  getArrivalsForStop(naptanId: string): Observable<Arrival[]> {
+    const response$ = this.makeGetRequest<ArrivalsApiResponse[]>(`StopPoint/${naptanId}/Arrivals`, {});
+    return response$.pipe(map(res => res.map(apiArrival => new Arrival(
+      apiArrival.lineName,
+      apiArrival.destinationName,
+      apiArrival.timeToStation
+    ))));
+  }
+
+  getStopName(naptanId: string): Observable<string> {
+    const response$ = this.makeGetRequest<{commonName: string}>(`StopPoint/${naptanId}`, {});
+    return response$.pipe(map(res => res.commonName));
+  }
 }
 
 interface StopApiObject {
@@ -54,3 +69,9 @@ interface StopApiObject {
 interface StopsApiResponse {
   stopPoints: StopApiObject[];
 }
+
+interface ArrivalsApiResponse {
+  lineName: string;
+  destinationName: string;
+  timeToStation: number;
+};

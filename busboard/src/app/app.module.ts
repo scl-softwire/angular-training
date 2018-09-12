@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { StopsComponent } from './components/stops/stops.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { StopDetailComponent } from './components/stop-detail/stop-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StopsComponent
+    StopsComponent,
+    StopDetailComponent
   ],
   imports: [
     BrowserModule,
