@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Stop } from '../../models/stop';
-import { STOPS } from '../../data/mock-stops';
+import { StopsService } from '../../services/stops.service';
 
 @Component({
   selector: 'app-stops',
   templateUrl: './stops.component.html',
   styleUrls: ['./stops.component.scss']
 })
-export class StopsComponent {
+export class StopsComponent implements OnInit {
 
   stops: Stop[];
   selectedStop: Stop;
 
-  constructor() {
-    this.stops = STOPS;
+  constructor(private stopsService: StopsService) {
+  }
+
+  ngOnInit() {
+    this.stops = this.stopsService.getStops();
   }
 
   onSelected(stop: Stop): void {
