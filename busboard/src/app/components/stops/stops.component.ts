@@ -10,12 +10,16 @@ import { StopsService } from '../../services/stops.service';
 })
 export class StopsComponent implements OnInit {
 
+  private postcode: string = 'se20ul';
+  private radius: number = 1000;
+  private maxStops: number = 5;
+
   stops: Stop[];
 
   constructor(private stopsService: StopsService) {
   }
 
   ngOnInit() {
-    this.stops = this.stopsService.getStops();
+    this.stopsService.getStops(this.postcode, this.radius, this.maxStops).subscribe(stops => this.stops = stops);
   }
 }
