@@ -7,7 +7,7 @@
         <div class="details">
           <span class="line-number">{{arrival.lineNumber}}</span>
           <span class="destination">{{arrival.destination}}</span>
-          <span class="arrival-time">{{arrival.arrivalInMinutes}} minutes</span>
+          <span class="arrival-time">{{arrival.arrivalInMinutes | arrivalTime}}</span>
         </div>
       </div>
   </li>
