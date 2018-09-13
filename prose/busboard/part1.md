@@ -26,7 +26,7 @@ We don't yet have any stop details in our code. You should create a class that c
 
 Once you've defined your model class(es), create a fake stop as a member variable on your new component, and write some HTML in the template that will display its details. You're aiming for something like this:
 
-![Part 1](assets/part1.png)
+![Part 1](assets/part1.PNG)
 
 You will probably want to use the `ngFor` directive in your template. This lets you use a for-loop in your template, for example to loop over an array, and it repeats the element that it is used on, and all its children, for every iteration of the loop. For example, to create an ordered list with an item for each element of an array:
 

@@ -6,9 +6,9 @@ At the moment, everything in our app happens on a single page. In this part, we'
 
 In the end, the two pages will look something like this:
 
-![Part 4 stops](assets/part4stops.png)
+![Part 4 stops](assets/part4stops.PNG)
 
-![Part 4 arrivals](assets/part4arrivals.png)
+![Part 4 arrivals](assets/part4arrivals.PNG)
 
 ## Setting up the router
 

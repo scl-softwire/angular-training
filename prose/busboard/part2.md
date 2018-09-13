@@ -10,7 +10,7 @@ Let's create a new component that we'll use for showing the list of stops. Gener
 
 This component should simply display a list of stops - something like this:
 
-![Part 2 stops](assets/part2stops.png)
+![Part 2 stops](assets/part2stops.PNG)
 
 The stops won't be real yet, so just make some up!
 
@@ -44,7 +44,7 @@ This allows you to pass in a value for this member variable using an HTML attrib
 
 Update your stops component so that when a selection is made, it displays the details for that stop beneath the list:
 
-![Part 2 arrivals](assets/part2arrivals.png)
+![Part 2 arrivals](assets/part2arrivals.PNG)
 
 You should consider using the `ngIf` directive. This completely removes the element it is attached to from the DOM if a particular condition is not met:
 

@@ -6,9 +6,9 @@ In this part, we will reinstate the arrivals functionality by getting real arriv
 
 You will then be able to click on a stop, and see data about its arrivals, like this:
 
-![Part 6 stops](assets/part6stops.png)
+![Part 6 stops](assets/part6stops.PNG)
 
-![Part 6 arrivals](assets/part6arrivals.png)
+![Part 6 arrivals](assets/part6arrivals.PNG)
 
 ## Arrivals API
 

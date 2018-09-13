@@ -28,7 +28,7 @@ Update your stops component so that the user can specify a postcode and your app
 
 It should look something like this:
 
-![Part 7](assets/part7.png)
+![Part 7](assets/part7.PNG)
 
 ## Wrapping up
 

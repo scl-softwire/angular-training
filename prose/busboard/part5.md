@@ -14,7 +14,7 @@ By the end of this part, we'll be able to get a list of stops nearby a given loc
 
 Here's what you're aiming for:
 
-![Part 5](assets/part5.png)
+![Part 5](assets/part5.PNG)
 
 It doesn't look much different from before, but these stops are now being extracted from real data that you'll get from TfL!
 
