@@ -35,6 +35,12 @@ Angular has a builtin module that deals with routing, but it isn't included in y
     exports: [RouterModule]
     ```
 
+1. Replace the template in `app.component.html` with the following, which tells Angular where to render the components you are routing to:
+
+    ```html
+    <router-outlet></router-outlet>
+    ```
+
 You should be all set for routing now! Visit http://localhost:4200 in your browser and check that you're redirected to `/stops`.
 
 If you look closely at the routes you've defined, you'll see that there's a colon before the `id` segment of the `/stop` URL - this means that `id` is the name of a parameter that is used as a placeholder for the actual value that is used there. We'll see how to use that later.
